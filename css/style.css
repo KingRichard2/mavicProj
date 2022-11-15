@@ -321,6 +321,10 @@ body {
   width: 100%;
 }
 
+.main .right .disImages img {
+  width: 6em;
+}
+
 .main #mainDisplay {
   height: 70vh;
   background-color: #38383f;
