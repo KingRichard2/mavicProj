@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 $colorBack:linear-gradient(0.5turn,black 50%, rgb(58, 204, 253));
 $colorTandI:rgb(94, 203, 254);
+$colorSection:rgb(31, 28, 28);
+
 $font: 'Roboto';
 
 *{
     margin: 0;
     box-sizing: border-box;
+    ul{
+        padding: 0;
+    }
+    color: white;
 }
 svg{
     color:rgb(57, 177, 233);
@@ -14,24 +20,24 @@ a{
     text-decoration: none;
 }
 body{
-    background: $colorBack;
+    background-color: $colorSection;
     color: rgb(166, 166, 166);
     font-family: $font;
     z-index: -2;
 }
 
+
 .inner{
     width: 100%;
-    padding: 0 3em;
-    background-color: rgb(38, 36, 36);
-    height: 100vh;
+    height: auto;
+    padding-bottom: 2vw;
+    background-image:url("https://github.com/KingRichard2/mavicProj/blob/main/images/drone/pngfind.com-dji-png-4835958.png");
 }
 .hidden{
     display: none;
 }
 .blueThin{
-    min-width: 6em;
-    font-size: 2.5rem;
+    font-size: 4vw;
     font-weight: 100;
     strong{
         font-weight: 500;
@@ -42,34 +48,42 @@ body{
 .upper{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     vertical-align: center;
     padding: 3em 0;
-    
+
+    .blueThin{
+        width: 15vw;
+        font-size: clamp(1.5vw,2vw,2.5vw);
+        text-align: center;
+    }
     .logo{
         display: flex;
         align-items: center;
     }
     .navigation{
-        width: 100%;
+        width: auto;
         #list{
             list-style-type: none;
             display: flex;
-            width: 100%;
+            min-width: 60vw;
             justify-content: center;
             align-items: center;
             height: 100%;
             gap: 2em;
+            font-size: clamp(1vw);
         }
-        a{
-            text-decoration: none;
-            color: white;
-            
-        }
+        
         li{
             transition: .2s ease;
             z-index: 1;
+            a{
+                display: flex;
+                text-decoration: none;
+                color: white;
+                font-size: 1vw;
+            }
         }
         li:hover{
             transform: scale(2);
@@ -81,111 +95,127 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1em;
+        gap:.5vw;
         img{
-            width: 3.5em;
-            height: 3.5em;
+            height: 3vw;
             z-index: 1;
             transition: .2s ease;
             padding: 1em;
-            border-radius: 2em;
+            border-radius: 1em;
             &:hover{
                 cursor: pointer;
                 background-color: rgb(255, 255, 255);
             }
         }
+        #searchBtn{
+            position: relative;
+        }
         #searchTextBox{
-            font-size: 1.5rem;
-            height: 3rem;
+            font-size: 1.5vw;
+            min-height: 5.2vh;
+            height: 3vw;
             color: rgb(43, 43, 43);
-            background: rgb(185, 184, 184);
+            background: rgb(255, 254, 254);
             border: none;
             position: absolute;
+            right: 0;
             z-index: 0;
-            right: 6em;
         }
+        .search{
+            display: flex;
+            position: relative;
+        }
+    }
+}
+.farLeft{
+    writing-mode: vertical-lr;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:1.75em;
+    width: 2em;
+    padding: 2em;
+    padding-top: 10em;
+    color:$colorTandI;
+    font-size: .9vw;
+    span{
+        color: $colorTandI;
+        
+    }
+    a{
+        transition: 0.2s ease;
+        color:inherit;
+        border-radius: 25px;
+        &:hover{
+            transform: scale(1.2);
+            background-color: rgb(79, 77, 77);
+            border: rgb(62, 60, 60) solid;
+            padding: .5em;
+        }
+    }
+    &::after{
+        content: '';
+        width: .3em;
+        height: 15em;
+        background-color:$colorTandI;
+    }
+    img{
+        color: inherit;
+        width: 1.5em;
     }
 }
 .main{
     display: flex;
-    margin: 0 auto;
-    height: 80%;
-    .farLeft{
-        writing-mode: vertical-lr;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap:1.75em;
-        position: relative;
-        width: 2em;
-        padding: 2em;
-        color:$colorTandI;
-        
-        a{
-            transition: 0.2s ease;
-            color:inherit;
-            border-radius: 25px;
-            &:hover{
-                transform: scale(1.2);
-                background-color: rgb(79, 77, 77);
-                border: rgb(62, 60, 60) solid;
-                padding: .5em;
-            }
-        }
-        &::after{
-            content: '';
-            width: .3em;
-            height: 15em;
-            background-color:$colorTandI;
-        }
-        img{
-            color: inherit;
-            width: 1.5em;
-        }
-    }
+    justify-content: center;
+    padding: 2vw;
+    width: 100%;
+    height: auto;
+    font-size: clamp(.5vw,.75vw,1vw);
     .left{
-        width: 90%;
+        width: 100%;
         padding: 0 1em;
-        h1{
-            font-size: 5rem;
-            padding: 2rem 0;
-        }
         p{
-            font-size:1.1rem;
+            font-size:1vw;
+            width: 90%;
         }
        .presenting{
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         padding: 1em 0; 
+        height: 20vh;
         .pres{
             width: 50%;
             height: 7em;
             display: inherit;
             align-items: center;
+            font-size: 1vw;
         }
         img{
-            width: 6em;
+            width: 6vw;
             padding: 1em;
         }
        }
        .price{
+        height: 15vw;
         display: flex;
         flex-direction: column;
-        padding: 2em 1em ;
+        justify-content: space-around;
+        padding:1vh 1vw;
+        font-size: 1vw;
         h1{
-            font-size: 3rem;
+            font-size: 2vw;
         }
         #priceId{
-            font-size: 3rem;
+            font-size: 2vw;
             padding: 0;
         }
         .buttons{
-            padding-top: 1em;   
             display: flex;
             align-items: center;
             gap: 2em; 
             #quantity{
-                font-size: 1.5rem;
+                font-size: 1.3vw;
             }
             .plusMinus{
                 display: inherit;
@@ -193,9 +223,9 @@ body{
                 gap: 1em;
             }
             .shop{
-                width: 15rem;
-                height: 4rem;
-                font-size: 1.5rem;
+                width: 15vw;
+                height: 4vw;
+                font-size: 1.2vw;
                 color: white;
                 background-color: $colorTandI;
                 border: none;
@@ -207,10 +237,13 @@ body{
                 }
             }
             .plusBtn{
-                width: 3rem;
-                height: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 3vw;
+                height: 3vw;
                 border: none;
-                font-size: 1.5rem;
+                font-size: 1.5vw;
                 background-color: rgb(26, 23, 23);
                 color: rgb(128, 127, 127);
                 transition: 0.2s ease;
@@ -226,20 +259,34 @@ body{
        }
     }
     .right{
-        width: 100%;
+        width: 120%;
+        height: 120%;
         .disImages{
             img{
                 width: 6em;
             }
         }
     }
-    #mainDisplay{
-        height: 70vh;
+    .mainDisplayCl{
+        height: clamp(30vh,35vw);
         background-color: rgb(56, 56, 63);
         display: flex;
         justify-content: center;
         align-items: center;
+        img{
+            width: 100%;
+        }
     }
+    .disImages{
+        img{
+            &:hover{
+                cursor: pointer;
+                border: 1px solid rgb(3, 3, 3);
+            }
+        }
+    }
+
+  
     #images{
         height: 10vh;
         background-color: darkred;
@@ -249,21 +296,22 @@ body{
     }    
 }
 .desTabs{
-    height: 30vh;
-    background-color: rgb(33, 32, 32);
+    height:clamp(15vh,20vw, 30vh);
+    background-color: rgb(46, 43, 43);
     display: flex;
     justify-content: space-around;
     align-items: center;
     .part{
-        width: 100%;
-        height: 100%;
+        width:100%;
+        height: inherit;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 2em;
+        gap: 1em;
+        font-size: 1vw;
         img{
-            width: 10em;
+            width: 10vw;
             height: 6em;
         }
         color: white;
@@ -276,5 +324,136 @@ body{
             text-align: center;
 
         }
+    }
+}
+.info1{
+    background-color: $colorSection;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 300;
+    height: auto;
+    color: white;
+    .camera{
+        width: 90vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        .displayImg{
+            width: 50%;
+        }
+        .whiteThin{
+            font-size: 1.5vw;
+        }
+        .specs{
+            display: flex;
+            justify-content: start;
+            font-size: 1vw;
+            gap: 6em;
+            .ulSpecs{
+                list-style-type: none;
+                font-size: 1.2vw;
+                justify-content: start;
+                li{
+                    padding: .5vw 0;
+                }
+            }
+        }
+        &__Left{
+            display: flex;
+            flex-direction: column;
+            gap:1em;
+            height: 25vw;
+        }
+        &__line{
+            padding: 1vw 0;
+            display: flex;
+            flex-direction: column;
+            &::after{
+                content: '';
+                width: 10vw;
+                height: .3vw;
+                border-radius: 10px;
+                background-color:$colorTandI;
+                margin-top: 2vw;
+            }   
+        }
+    }
+    .reverse{
+        flex-direction: row-reverse;
+    }
+
+    .toBottomRev{
+        writing-mode: horizontal-tb;
+        width: 40vw;
+        left: 0;
+        right: 0;
+        padding-top: 2em;
+        white-space: nowrap;
+       &::after{
+        content:'';
+        width: 100%;
+        height: .3vw;
+        border-radius: 10px;
+        background-color: $colorBack;
+       }
+       align-self: start;
+       flex-direction: row-reverse;
+       position: relative;
+       left: 5vw;
+    }
+    
+}
+
+.foldAndPort{
+    color: white;
+    height: 50vw;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-image: url(https://images.unsplash.com/photo-1623049330573-403a0be4da07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position:left;
+    gap: 1.5vw;
+    padding: 10vw;
+    &__foldH1{
+        font-size: 5vw;
+    }
+    &__create{
+        font-size: 3.5vw;
+        font-weight: 300;
+    }
+
+}
+.transmis{
+    text-align: center;
+    background-color: $colorSection;
+    padding: 2vw;
+    line-height: 5vw;
+    margin: 0 auto;
+    position: relative;
+    &__droneDis{
+        width: 50vw;
+    }
+    &__sys{
+        font-size: 4vw;
+        font-weight: 400;
+    }
+    &__explore{
+        font-size: 1.5vw;
+        font-weight: 200;
+    }
+    &__droneTxt{
+        line-height: 5vw;
+        font-size: 2vw;
+        font-weight: 300;
+    }
+    .absolutePos{
+        position: absolute;
+        bottom: 2vw;
+        line-height: 1em;
     }
 }

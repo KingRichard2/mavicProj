@@ -8,6 +8,10 @@ let priceVal = parseInt(document.getElementById('priceId').textContent)
 const price = document.getElementById('priceId');
 const fixedPrice = 1499;
 const parts = document.getElementsByClassName('part');
+const mainImage = document.getElementById("mainDisplay")
+
+
+
 textButton.addEventListener("click", e=>{
     textField.classList.toggle('hidden');
     if(textField.value!=='' ?? textField.value!==null){
@@ -33,6 +37,3 @@ plus2btn.addEventListener("click",e=>{
     }
 })
 
-parts.addEventListener('click',e=>{
-    
-})
