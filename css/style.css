@@ -29,7 +29,7 @@ body {
   width: 100%;
   height: auto;
   padding-bottom: 2vw;
-  background-image: url("https://github.com/KingRichard2/mavicProj/blob/main/images/drone/pngfind.com-dji-png-4835958.png");
+  background: url("https://github.com/KingRichard2/mavicProj/blob/main/images/drone/pngfind.com-dji-png-4835958.png");
 }
 
 .hidden {
@@ -136,8 +136,8 @@ body {
   z-index: 1;
   -webkit-transition: .2s ease;
   transition: .2s ease;
-  padding: 1em;
-  border-radius: 1em;
+  padding: calc(1vw*.9);
+  border-radius: 1vw;
 }
 
 .upper .user img:hover {
@@ -150,8 +150,8 @@ body {
 }
 
 .upper .user #searchTextBox {
-  font-size: 1.5vw;
-  min-height: 5.2vh;
+  font-size: 1.75vw;
+  width: 15vw;
   height: 3vw;
   color: #2b2b2b;
   background: #fffefe;
@@ -181,7 +181,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.75em;
+  gap: .5vw;
   width: 2em;
   padding: 2em;
   padding-top: 10em;
@@ -197,15 +197,12 @@ body {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   color: inherit;
-  border-radius: 25px;
+  border-radius: 3vw;
+  padding: 1vw;
 }
 
 .farLeft a:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
   background-color: #4f4d4d;
-  border: #3e3c3c solid;
-  padding: .5em;
 }
 
 .farLeft::after {
@@ -227,7 +224,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2vw;
+  padding: 0 2vw;
   width: 100%;
   height: auto;
   font-size: clamp(0.5vw, 0.75vw, 1vw);
@@ -366,16 +363,42 @@ body {
 
 .main .right {
   width: 120%;
-  height: 120%;
+  height: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.main .right .disImages img {
-  width: 6em;
+.main .right .disImages {
+  background-color: transparent;
+}
+
+.main .right .disImages .disImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 8vw;
+  height: 4vw;
+}
+
+.main .right .disImages .disImage:hover {
+  cursor: pointer;
+  border: 3px solid #423d3d;
 }
 
 .main .mainDisplayCl {
   height: clamp(30vh, 35vw);
-  background-color: #38383f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -385,20 +408,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 .main .mainDisplayCl img {
   width: 100%;
 }
 
-.main .disImages img:hover {
-  cursor: pointer;
-  border: 1px solid #030303;
+.main .mainDisplayCl #mainDisplay {
+  width: 80%;
 }
 
 .main #images {
   height: 10vh;
-  background-color: darkred;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,7 +514,9 @@ body {
 }
 
 .info1 .camera .displayImg {
-  width: 50%;
+  width: 30vw;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .info1 .camera .whiteThin {
@@ -561,7 +585,7 @@ body {
           flex-direction: row-reverse;
 }
 
-.info1 .toBottomRev {
+.toBottomRev {
   -webkit-writing-mode: horizontal-tb;
       -ms-writing-mode: lr-tb;
           writing-mode: horizontal-tb;
@@ -581,7 +605,7 @@ body {
   left: 5vw;
 }
 
-.info1 .toBottomRev::after {
+.toBottomRev::after {
   content: '';
   width: 100%;
   height: .3vw;
@@ -602,10 +626,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url(https://images.unsplash.com/photo-1623049330573-403a0be4da07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
+  background-image: url("../images/prince-hassan-VN3xlW3N7yw-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: left;
+  background-position: bottom;
+  background-attachment: fixed;
   gap: 1.5vw;
   padding: 10vw;
 }
@@ -630,6 +655,7 @@ body {
 
 .transmis__droneDis {
   width: 50vw;
+  height: 22vw;
 }
 
 .transmis__sys {
@@ -652,5 +678,200 @@ body {
   position: absolute;
   bottom: 2vw;
   line-height: 1em;
+}
+
+.features {
+  height: auto;
+  background-size: cover;
+  background-position: left;
+  position: relative;
+}
+
+.features .wrapRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.features__inner {
+  font-size: 1vw;
+  padding: 4vw;
+}
+
+.features__megapix {
+  padding: 2vw 4vw;
+  opacity: 1;
+  display: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1vw;
+  width: 50vw;
+}
+
+.features .flightImg {
+  width: 20vw;
+  height: 20vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 10vw;
+}
+
+.features .second {
+  border-radius: 0;
+  width: 20vw;
+  height: 16vw;
+}
+
+.features .reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  text-align: right;
+}
+
+.features .reverse .icon {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.features__icons {
+  gap: .5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.features__icons .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20vw;
+  height: 5vw;
+  gap: 1vw;
+}
+
+.features__icons .icon .iconImg {
+  width: 4vw;
+}
+
+.features .colreverse {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.features::before {
+  content: "";
+  background-image: url("../images/drone/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+}
+
+.footer {
+  position: relative;
+  height: 25vw;
+  width: 100%;
+  position: relative;
+  padding: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1vw;
+}
+
+.footer .footerFarLeft {
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb;
+  padding: 1vw 0;
+  gap: 0;
+  width: 20vw;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.footer .footerFarLeft::after {
+  display: none;
+}
+
+.footer .smaller {
+  font-size: 2vw;
+}
+
+.footer__questions {
+  font-size: 1vw;
+  opacity: .5;
+}
+
+.footer__lowerLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1vw;
+}
+
+.footer__right {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  padding-left: 10vw;
+}
+
+.footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1vw;
+}
+
+.footer__list {
+  list-style-type: none;
+  line-height: 2vw;
+}
+
+.footer__list a {
+  opacity: .5;
+}
+
+.footer .absolute {
+  position: absolute;
+  width: 95%;
+  text-align: center;
+  bottom: 1vw;
 }
 /*# sourceMappingURL=style.css.map */

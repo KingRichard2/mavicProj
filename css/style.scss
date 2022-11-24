@@ -31,7 +31,7 @@ body{
     width: 100%;
     height: auto;
     padding-bottom: 2vw;
-    background-image:url("https://github.com/KingRichard2/mavicProj/blob/main/images/drone/pngfind.com-dji-png-4835958.png");
+    background:url("https://github.com/KingRichard2/mavicProj/blob/main/images/drone/pngfind.com-dji-png-4835958.png");
 }
 .hidden{
     display: none;
@@ -100,8 +100,8 @@ body{
             height: 3vw;
             z-index: 1;
             transition: .2s ease;
-            padding: 1em;
-            border-radius: 1em;
+            padding: calc(1vw*.9);
+            border-radius: 1vw;
             &:hover{
                 cursor: pointer;
                 background-color: rgb(255, 255, 255);
@@ -111,8 +111,8 @@ body{
             position: relative;
         }
         #searchTextBox{
-            font-size: 1.5vw;
-            min-height: 5.2vh;
+            font-size: 1.75vw;
+            width: 15vw;
             height: 3vw;
             color: rgb(43, 43, 43);
             background: rgb(255, 254, 254);
@@ -132,7 +132,7 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap:1.75em;
+    gap: .5vw;
     width: 2em;
     padding: 2em;
     padding-top: 10em;
@@ -145,12 +145,10 @@ body{
     a{
         transition: 0.2s ease;
         color:inherit;
-        border-radius: 25px;
+        border-radius: 3vw;
+        padding: 1vw;
         &:hover{
-            transform: scale(1.2);
             background-color: rgb(79, 77, 77);
-            border: rgb(62, 60, 60) solid;
-            padding: .5em;
         }
     }
     &::after{
@@ -167,7 +165,7 @@ body{
 .main{
     display: flex;
     justify-content: center;
-    padding: 2vw;
+    padding: 0 2vw;
     width: 100%;
     height: auto;
     font-size: clamp(.5vw,.75vw,1vw);
@@ -260,36 +258,43 @@ body{
     }
     .right{
         width: 120%;
-        height: 120%;
+        height: 40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .disImages{
-            img{
-                width: 6em;
+            background-color: transparent;
+            .disImage{
+                display: flex;  
+                overflow: hidden;
+                justify-content: center;
+                width: 8vw;
+                height: 4vw;
+                &:hover{
+                    cursor: pointer;
+                    border: 3px solid rgb(66, 61, 61);
+                }
             }
         }
     }
     .mainDisplayCl{
         height: clamp(30vh,35vw);
-        background-color: rgb(56, 56, 63);
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%;
         img{
             width: 100%;
         }
-    }
-    .disImages{
-        img{
-            &:hover{
-                cursor: pointer;
-                border: 1px solid rgb(3, 3, 3);
-            }
+        #mainDisplay{
+            width: 80%;
         }
     }
+ 
 
   
     #images{
         height: 10vh;
-        background-color: darkred;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -342,7 +347,8 @@ body{
         align-items: center;
         padding: 2rem;
         .displayImg{
-            width: 50%;
+            width: 30vw;
+            justify-self: center;
         }
         .whiteThin{
             font-size: 1.5vw;
@@ -383,28 +389,26 @@ body{
     }
     .reverse{
         flex-direction: row-reverse;
-    }
-
-    .toBottomRev{
-        writing-mode: horizontal-tb;
-        width: 40vw;
-        left: 0;
-        right: 0;
-        padding-top: 2em;
-        white-space: nowrap;
-       &::after{
-        content:'';
-        width: 100%;
-        height: .3vw;
-        border-radius: 10px;
-        background-color: $colorBack;
-       }
-       align-self: start;
-       flex-direction: row-reverse;
-       position: relative;
-       left: 5vw;
-    }
-    
+    } 
+}
+.toBottomRev{
+    writing-mode: horizontal-tb;
+    width: 40vw;
+    left: 0;
+    right: 0;
+    padding-top: 2em;
+    white-space: nowrap;
+   &::after{
+    content:'';
+    width: 100%;
+    height: .3vw;
+    border-radius: 10px;
+    background-color: $colorBack;
+   }
+   align-self: start;
+   flex-direction: row-reverse;
+   position: relative;
+   left: 5vw;
 }
 
 .foldAndPort{
@@ -413,10 +417,11 @@ body{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    background-image: url(https://images.unsplash.com/photo-1623049330573-403a0be4da07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
+    background-image: url("../images/prince-hassan-VN3xlW3N7yw-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position:left;
+    background-position:bottom;
+    background-attachment: fixed;
     gap: 1.5vw;
     padding: 10vw;
     &__foldH1{
@@ -437,6 +442,7 @@ body{
     position: relative;
     &__droneDis{
         width: 50vw;
+        height: 22vw;
     }
     &__sys{
         font-size: 4vw;
@@ -456,4 +462,138 @@ body{
         bottom: 2vw;
         line-height: 1em;
     }
+    
+}
+
+.features{
+    height: auto;
+    background-size: cover;
+    background-position: left;
+    position: relative;
+    .wrapRow{
+        display: flex;
+        align-items: center;
+    }
+    &__inner{
+        font-size: 1vw;
+        padding: 4vw;
+    }
+
+    &__megapix{
+        padding: 2vw 4vw;
+        opacity: 1;
+        display: inherit;
+        flex-direction: column;
+        gap:1vw;
+        width: 50vw;
+    }
+    .flightImg{
+        width: 20vw;
+        height: 20vw;
+        align-self: center;
+        border-radius: 10vw;
+        
+    }
+    .second{
+        border-radius: 0;
+        width: 20vw;
+        height: 16vw;
+    }
+.reverse{
+    flex-direction: row-reverse;
+    text-align: right;
+    .icon{
+        flex-direction: row-reverse;
+    }
+    
+}
+    &__icons{
+       gap:.5vw;
+       display: flex;
+       flex-wrap: wrap;
+        .icon{
+           display: flex;
+           align-items: center;
+            width: 20vw;
+            height: 5vw;
+            gap:1vw;
+            .iconImg{
+                width: 4vw   ;
+            }
+        }
+    }
+    .colreverse{
+        justify-content: flex-end;
+    }
+    &::before{
+        content: "";
+        background-image: url('../images/drone/wallpaperflare.com_wallpaper.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.2;
+    }
+
+}
+
+.footer{
+    position: relative;
+    height: 25vw;
+    width: 100%;
+    position: relative;
+    padding: 2vw;
+    display: flex;
+    font-size: 1vw;
+.footerFarLeft{
+    writing-mode: horizontal-tb;
+    padding: 1vw 0;
+    gap: 0;
+    width: 20vw;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+   &::after{
+    display: none;
+   }
+  
+}
+.smaller{
+    font-size: 2vw;
+   }
+&__questions{
+    font-size: 1vw;
+    opacity: .5;
+}
+&__lowerLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+&__right{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-left: 10vw;
+}
+&__info{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+&__list{
+    list-style-type: none;
+    line-height: 2vw;
+    a{
+        opacity: .5;
+    }
+}
+.absolute{
+    position: absolute;
+    width: 95%;
+    text-align: center;
+    bottom: 1vw;
+}
 }
