@@ -713,6 +713,16 @@ body {
   width: 50vw;
 }
 
+.features__megapix .camDescription {
+  width: 40vw;
+}
+
+.features__megapix .camDescription2 {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
 .features .flightImg {
   width: 20vw;
   height: 20vw;
@@ -736,11 +746,14 @@ body {
   text-align: right;
 }
 
-.features .reverse .icon {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+.features .reverse .flightImg {
+  width: 20vw;
+  height: 17.5vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 0;
+  border-top-right-radius: 10vw;
 }
 
 .features__icons {
@@ -750,25 +763,52 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: relative;
+  gap: 0;
 }
 
 .features__icons .icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: inherit;
   width: 20vw;
   height: 5vw;
   gap: 1vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .features__icons .icon .iconImg {
   width: 4vw;
 }
 
-.features .colreverse {
+.features__icons .icon .iconText {
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.features__icons .icon__span {
+  gap: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.features__icons .rowRev {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.features .flEnd {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;

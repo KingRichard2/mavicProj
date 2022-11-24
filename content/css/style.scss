@@ -484,15 +484,21 @@ body{
         opacity: 1;
         display: inherit;
         flex-direction: column;
+
         gap:1vw;
         width: 50vw;
+        .camDescription{
+            width: 40vw;
+        }
+        .camDescription2{
+            align-self: end;
+        }
     }
     .flightImg{
         width: 20vw;
         height: 20vw;
         align-self: center;
         border-radius: 10vw;
-        
     }
     .second{
         border-radius: 0;
@@ -502,29 +508,50 @@ body{
 .reverse{
     flex-direction: row-reverse;
     text-align: right;
-    .icon{
-        flex-direction: row-reverse;
-    }
     
+    .flightImg{
+        width: 20vw;
+        height: 17.5vw;
+        align-self: center;
+        border-radius: 0;
+        border-top-right-radius: 10vw ;
+    }
 }
     &__icons{
        gap:.5vw;
        display: flex;
        flex-wrap: wrap;
+       position: relative;
+       gap:0;
         .icon{
-           display: flex;
-           align-items: center;
+           display: inherit;
             width: 20vw;
             height: 5vw;
             gap:1vw;
+            align-items: center;
             .iconImg{
-                width: 4vw   ;
+                width: 4vw;
             }
+            .iconText{
+                width: 100%;
+                flex-direction: row-reverse;
+            }
+            &__span{
+                gap: 1vw;
+                display: flex;
+                align-items: center;
+            }
+            
         }
+        .rowRev{
+            flex-direction: row-reverse;
+            align-content: flex-start;
+        }          
     }
-    .colreverse{
+    .flEnd{
         justify-content: flex-end;
     }
+    
     &::before{
         content: "";
         background-image: url('../images/drone/wallpaperflare.com_wallpaper.jpg');

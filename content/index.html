@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="angMod">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mavic</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="../lib/angular.min.js"></script>
     <script src="js/script.js" defer></script>
 </head>
-<body>
+<body ng-controller="angCon">
      <header class="inner">
         <!-- Navigation menu-->
         <section class="upper">
@@ -69,14 +70,14 @@
                     <div class="price">
                         <div>
                             <h2>Price</h2>
-                            <h1>$<span id="priceId">1499</span></h1>
+                            <h1>$<span id="priceId">{{totalPrice()}}</span></h1>
                         </div>
                         <div class="buttons">
                             <button class="shop" id="shopNow">SHOP NOW</button>
                             <div class="plusMinus">
-                                <button class="plusBtn" id="minus1">-</button>
-                                <span id="quantity">1</span>
-                                <button class="plusBtn" id="plus1">+</button>
+                                <button class="plusBtn" id="minus1" ng-click="decreaseQuantity()">-</button>
+                                <span id="quantity">{{quantity}}</span>
+                                <button class="plusBtn" id="plus1" ng-click="increaseQuantity()">+</button>
                             </div>
                         </div>  
                     </div>
@@ -84,15 +85,14 @@
             </div>
             <div class="right">
                 <div class="mainDisplayCl">
-                    <img src="images\drone\5b37fe6f2751046a99744b90.png" alt="bigDead" id="mainDisplay">
+                    <img ng-src="images\drone\{{imgLink}}" alt="bigDead" id="mainDisplay">
                 </div>
-                <div id="images" class="disImages">
-                       
-                    <div class="disImage"><img src="images\drone\5b37fe6f2751046a99744b90.png" alt="dead"></div>
-                    <div class="disImage"><img src="images\drone\61d2fbd592b57c0004c6474e.png" alt="dead" ></div>
-                    <div class="disImage"><img src="images\drone\pngfind.com-dji-png-4835958.png" alt="dead"></div>
-                    <div class="disImage"><img src="images\drone\pngfind.com-mavic-pro-png-6105122.png" alt="dead"></div>
-                    <div class="disImage"><img src="images\drone\pngfind.com-portal-gun-png-2680904.png" alt="dead"></div>
+                <div id="images" class="disImages">   
+                    <div class="disImage" ng-click="setImage(1)"><img src="images\drone\5b37fe6f2751046a99744b90.png" alt="dead"></div>
+                    <div class="disImage" ng-click="setImage(2)"><img src="images\drone\61d2fbd592b57c0004c6474e.png" alt="dead" ></div>
+                    <div class="disImage" ng-click="setImage(3)"><img src="images\drone\pngfind.com-dji-png-4835958.png" alt="dead"></div>
+                    <div class="disImage" ng-click="setImage(4)"><img src="images\drone\pngfind.com-mavic-pro-png-6105122.png" alt="dead"></div>
+                    <div class="disImage" ng-click="setImage(5)"><img src="images\drone\pngfind.com-portal-gun-png-2680904.png" alt="dead"></div>
                 </div>
             </div>
         </section>
@@ -106,61 +106,32 @@
         <div class="part"><img src="images/SVG/Lower/Asset 10.svg" alt="dead"><p>Hight Compatibility</p></div>
     </section>
     <section class="info1">
-        <div class="camera">
-                <div class="camera__Left">
+
+
+        <div class="camera" ng-repeat="item in drones" ng-class="item.side == 1 ? 'reverse':''">
+            <div class="camera__Left" >
                 <div class="camera__line">
-                    <h1 class="blueThin"><strong>Mavic 2 Zoom</strong></h1>
-                    <h2 class="whiteThin">24-48mm Optical Zoom Camera with Ultimate Flexibility</h2>
+                    <h1 class="blueThin"><strong>{{item.droneName}}</strong></h1>
+                    <h2 class="whiteThin">{{item.subTitle}}</h2>
                 </div>
                 <div class="specs">
                     <ul class="ulSpecs">
-                        <li>20MP 1" CMOS Sensor</li>
-                        <li>Adjustable Aperture, f/2.8 -f/11</li>
-                        <li>10-bit Dlog-M colour profile</li>
-                        <li>10-bit HDR Video</li>
+                        <li>{{item.features[0]}}</li>
+                        <li>{{item.features[1]}}</li>
+                        <li>{{item.features[2]}}</li>
+                        <li>{{item.features[3]}}</li>
                     </ul>
                     <ul class="ulSpecs">
-                        <li>8km 1080p Video Transmission</li>
-                        <li>Omnidirection Obstacle Sensing</li>
-                        <li>31 min flight time</li>
-                        <li>Hyperlapse</li>
+                        <li>{{item.features[4]}}</li>
+                        <li>{{item.features[5]}}</li>
+                        <li>{{item.features[6]}}</li>
+                        <li>{{item.features[7]}}</li>
                     </ul>
                 </div>
             </div>
-            <img src="images\drone\5b37fe6f2751046a99744b90.png" alt="bigImage" class="displayImg">
+            <img ng-src="images\drone\{{item.image}}" alt="bigImage" class="displayImg">
         </div>
-        <di+v class="camera reverse">
-            <div class="camera__Left">
-                <div class="camera__line">
-                    <h1 class="blueThin"><strong>Mavic 2 Zoom</strong></h1>
-                    <h2 class="whiteThin">Hasselblad L1D-20c Camera Iconic Image Quality</h2>
-                </div>
-                <div class="specs">
-                    <ul class="ulSpecs">
-                        <li>20MP 1" CMOS Sensor</li>
-                        <li>Adjustable Aperture, f/2.8 -f/11</li>
-                        <li>10-bit Dlog-M colour profile</li>
-                        <li>10-bit HDR Video</li>
-                    </ul>
-                    <ul class="ulSpecs">
-                        <li>8km 1080p Video Transmission</li>
-                        <li>Omnidirection Obstacle Sensing</li>
-                        <li>31 min flight time</li>
-                        <li>Hyperlapse</li>
-                    </ul>
-                </div>
-                </div>
-                
-                <img src="images/drone/pngfind.com-drone-png-1013108.png" alt="bigImage"class="displayImg">
-            </di+v>
-            
-        </div>
-        <div class="farLeft toBottomRev">
-            <a href="#"><img src="images/vertical text/g+.svg" alt="img1"></a>
-                <a href="#"><img src="images/vertical text/tw.svg" alt="img2"></a>
-                <a href="#"><img src="images/vertical text/f.svg" alt="img3"></a>
-                <a href="#">FOLLOW US</a>
-        </div>
+        <div ng-include="'/content/view/social.html'" class="farLeft toBottomRev"></div>
     </section>
     <section class="foldAndPort">
         <h1 class="foldAndPort__foldH1">
@@ -187,62 +158,22 @@
         <p class="transmis__droneTxt">8km 1080p live video<br>2.4/5.8GHz real-time auto-switching<br>40Mbs download speed<br>120 ms low latency</p>
     </section>
     <section class="features">
-            <div class="features__inner">
-                
-            <div class="wrapRow">
-                <img src="images/drone/61d2fbd592b57c0004c6474e.png" alt="bigDead" class="flightImg">
+        <div class="features__inner">
+            <div class="wrapRow" ng-repeat="spec in droneSpecs" ng-class="spec.side == 1 ? 'reverse':''">
+                <img ng-src="images/drone/{{spec.image}}" alt="bigDead" class="flightImg">
                 <div class="features__megapix">
-                    <h2 class="blue">48-Megapixel</h2>
-                    <h2>Super Resolution Photos</h2>
-                    <p>When taking picture in 24mm equivalent field of view, the camera will capture and patch<br>
-                    nine photos with it's telephoto lens, resulting in a 48-megapixel super resolution photo in vivid detail.</p>
-                    <div class="features__icons">
-                        <div class="icon">
-                           <img class="iconImg" src="images/SVG/48 megapixel.svg" alt=""> Lens: 24-48mm
+                    <h2 class="blue">{{spec.camSpec}}</h2>
+                    <h2>{{spec.camRes}}</h2>
+                    <p ng-class="spec.side == 0 ? 'camDescription':'camDescription camDescription2'">{{spec.camDes}}</p>
+                    <div class="features__icons" ng-class="spec.side == 0 ? '':'flEnd'">
+                        <div class="icon" ng-repeat="e in spec.icon" ng-class="spec.side == 0 ? '':' rowRev'">
+                                <img class="iconImg" ng-src="/content/images/SVG/{{e.path}}" alt="dead"><span>{{e.text}}</span>
                         </div>
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/StillImage.svg" alt="dead">Still image: 5472x3648
-                        </span>
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/Sensor.svg" alt="dead">Sensor: 1" CMOS
-                        </span>
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/Video.svg" alt="dead">Video: 4K: 3840x2160 30p
-                        </span>
                     </div>
                 </div>
             </div>
-                <div class="wrapRow reverse">
-                <img src="images/drone/pngfind.com-mavic-pro-png-6105122.png" alt="bigDead" class="flightImg second">
-                <div class="features__megapix">
-                    <h2 class="blue">48-Megapixel</h2>
-                    <h2>Super Resolution Photos</h2>
-                    <p>When taking picture in 24mm equivalent field of view, the camera will capture and patch<br>
-                    nine photos with it's telephoto lens, resulting in a 48-megapixel super resolution photo in vivid detail.</p>
-                    <div class="features__icons colreverse">
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/freeMap.svg" alt="dead" width=>Free
-                        </span>
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/Circle.svg" alt="dead">Circle
-                        </span>
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/CourseLock.svg" alt="dead">CourseLock
-                        </span>
-                        <span class="icon">
-                            <img class="iconImg" src="images/SVG/Waypoint.svg" alt="dead">Waypoint
-                        </span>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="farLeft toBottomRev">
-                <a href="#"><img src="images/vertical text/g+.svg" alt="img1"></a>
-                <a href="#"><img src="images/vertical text/tw.svg" alt="img2"></a>
-                <a href="#"><img src="images/vertical text/f.svg" alt="img3"></a>
-                <a href="#">FOLLOW US</a>
-            </div>
-        </div>
+            </div>    
+            <div ng-include="'/content/view/social.html'" class="farLeft toBottomRev"></div>
     </section>
     <section class="footer">
         <div class="footer__left">
