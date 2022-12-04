@@ -26,23 +26,37 @@ body{
     z-index: -2;
 }
 
-
 .inner{
     width: 100%;
     height: auto;
-    padding-bottom: 2vw;
-    background:url("https://github.com/KingRichard2/mavicProj/blob/main/images/drone/pngfind.com-dji-png-4835958.png");
+    .mobileDis{
+        display: flex;
+        padding: 1vw  2vw ;
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15vw;
+        }
+    }
 }
 .hidden{
     display: none;
 }
+.hiddenFlow{
+    overflow: hidden;
+}
 .blueThin{
-    font-size: 4vw;
+    font-size: 2vw;
+    line-height: 5vw;
     font-weight: 100;
     strong{
         font-weight: 500;
         color:rgb(141, 219, 255);
     }
+}
+.first{
+    z-index: 20;
 }
 
 .upper{
@@ -51,30 +65,34 @@ body{
     justify-content: space-around;
     align-items: center;
     vertical-align: center;
-    padding: 3em 0;
+    padding: 2vw 0 2vw 0;
 
     .blueThin{
-        width: 15vw;
         font-size: clamp(1.5vw,2vw,2.5vw);
         text-align: center;
     }
-    .logo{
-        display: flex;
+    .menu{
+        width: 100%;
+        display: inherit;
         align-items: center;
     }
+   
     .navigation{
-        width: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
         #list{
             list-style-type: none;
             display: flex;
-            min-width: 60vw;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            gap: 2em;
+            height: 90%;
+            gap: 2vw;
             font-size: clamp(1vw);
+            
         }
-        
         li{
             transition: .2s ease;
             z-index: 1;
@@ -94,7 +112,7 @@ body{
     .user{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap:.5vw;
         img{
             height: 3vw;
@@ -109,22 +127,31 @@ body{
         }
         #searchBtn{
             position: relative;
+            z-index: 5;
         }
         #searchTextBox{
             font-size: 1.75vw;
-            width: 15vw;
-            height: 3vw;
+            width: 500%;
+            padding: 0 3vw;
+            height: 100%;
             color: rgb(43, 43, 43);
             background: rgb(255, 254, 254);
             border: none;
+            border-radius: 1vw;
             position: absolute;
-            right: 0;
-            z-index: 0;
+            left: 0;
+            z-index: 4;
         }
         .search{
             display: flex;
             position: relative;
         }
+    }
+    .burger{
+        width: 7.5vw;
+        height: 10vw;
+        display: none;
+        z-index: 4;
     }
 }
 .farLeft{
@@ -136,11 +163,11 @@ body{
     width: 2em;
     padding: 2em;
     padding-top: 10em;
+    white-space: nowrap;
     color:$colorTandI;
     font-size: .9vw;
     span{
         color: $colorTandI;
-        
     }
     a{
         transition: 0.2s ease;
@@ -156,6 +183,7 @@ body{
         width: .3em;
         height: 15em;
         background-color:$colorTandI;
+        border-radius: 20px;
     }
     img{
         color: inherit;
@@ -169,9 +197,18 @@ body{
     width: 100%;
     height: auto;
     font-size: clamp(.5vw,.75vw,1vw);
+    
+    .mainRightDis{
+        display: inherit;
+        justify-content: inherit;
+        height: 100%;
+    }
     .left{
         width: 100%;
-        padding: 0 1em;
+        padding: 3vw 1vw;
+        .blueThin{
+            font-size: 3vw;
+        }
         p{
             font-size:1vw;
             width: 90%;
@@ -181,7 +218,6 @@ body{
         flex-wrap: wrap;
         align-items: center;
         padding: 1em 0; 
-        height: 20vh;
         .pres{
             width: 50%;
             height: 7em;
@@ -195,7 +231,7 @@ body{
         }
        }
        .price{
-        height: 15vw;
+
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -258,21 +294,25 @@ body{
     }
     .right{
         width: 120%;
-        height: 40vw;
+        height: 45vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: 1vw;
         .disImages{
             background-color: transparent;
+
             .disImage{
                 display: flex;  
                 overflow: hidden;
                 justify-content: center;
                 width: 8vw;
-                height: 4vw;
+                height: 100%;
+                transition: .5s ease;
                 &:hover{
                     cursor: pointer;
                     border: 3px solid rgb(66, 61, 61);
+                    transform: scale(1.1);
                 }
             }
         }
@@ -282,7 +322,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: 70vw;
         img{
             width: 100%;
         }
@@ -294,7 +334,7 @@ body{
 
   
     #images{
-        height: 10vh;
+        height: 3vw;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -371,7 +411,6 @@ body{
             display: flex;
             flex-direction: column;
             gap:1em;
-            height: 25vw;
         }
         &__line{
             padding: 1vw 0;
@@ -421,7 +460,6 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
     background-position:bottom;
-    background-attachment: fixed;
     gap: 1.5vw;
     padding: 10vw;
     &__foldH1{
@@ -436,7 +474,7 @@ body{
 .transmis{
     text-align: center;
     background-color: $colorSection;
-    padding: 2vw;
+    padding: 4vw;
     line-height: 5vw;
     margin: 0 auto;
     position: relative;
@@ -518,7 +556,6 @@ body{
     }
 }
     &__icons{
-       gap:.5vw;
        display: flex;
        flex-wrap: wrap;
        position: relative;
@@ -526,7 +563,6 @@ body{
         .icon{
            display: inherit;
             width: 20vw;
-            height: 5vw;
             gap:1vw;
             align-items: center;
             .iconImg{
@@ -568,59 +604,650 @@ body{
 }
 
 .footer{
-    position: relative;
-    height: 25vw;
     width: 100%;
     position: relative;
-    padding: 2vw;
+    padding: 2vw 2vw 5vw 2vw;
     display: flex;
     font-size: 1vw;
-.footerFarLeft{
-    writing-mode: horizontal-tb;
-    padding: 1vw 0;
-    gap: 0;
-    width: 20vw;
-    justify-content: flex-end;
-    flex-direction: row-reverse;
-   &::after{
-    display: none;
-   }
-  
-}
-.smaller{
-    font-size: 2vw;
-   }
-&__questions{
-    font-size: 1vw;
-    opacity: .5;
-}
-&__lowerLeft{
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-&__right{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    padding-left: 10vw;
-}
-&__info{
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-&__list{
-    list-style-type: none;
-    line-height: 2vw;
-    a{
+    &__feedback{
+        display: flex;
+        flex-direction: column;
+    }
+    .footerFarLeft{
+        writing-mode: horizontal-tb;
+        padding: 1vw 0;
+        gap: 0;
+        width: 20vw;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+    &::after{
+        display: none;
+    }
+    
+    }
+    .smaller{
+        font-size: 2vw;
+        line-height: 2vw;
+    }
+    &__questions{
+        font-size: 1vw;
         opacity: .5;
     }
+    &__lowerLeft{
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+    }
+    &__right{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding-left: 10vw;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+    }
+    &__list{
+        list-style-type: none;
+        line-height: 2vw;
+        a{
+            opacity: .5;
+        }
+    }
+    .absolute{
+        position: absolute;
+        width: 95%;
+        text-align: center;
+        bottom: 1vw;
+    }
 }
-.absolute{
-    position: absolute;
-    width: 95%;
-    text-align: center;
-    bottom: 1vw;
+
+@media (max-width: 960px) {
+   .farLeft{
+    font-size: 1.25vw;
+
+    &::after{
+        width: .35vw;
+        border-radius: 20px;
+        height: 10vh;
+    }
+   }
+   .toBottomRev{
+    &::after{
+        width: 60vh;
+        height: .35vw;
+    }
+   }
+.inner{
+    .mobileDis{
+        .upper{
+            .navigation{
+                .navList{
+                    li{
+                        a{
+                            font-size: 1.25vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+.main{
+    .left{
+        p{
+             font-size: 1.3vw;
+        }
+    }
+    .presenting{
+        .pres{
+            gap: 1vw;
+        }
+        .presText{
+            font-size: 1.15vw;
+            h5{
+                font-weight: 300;
+            }
+            h4{
+                font-weight: 300;
+            }
+        }
+    }
+        .right{
+            height: 50vw;
+        }
+}
+.desTabs{
+        .part{
+            font-size: 1.25vw;
+        }
+}
+.info1{
+    .camera{
+        .whiteThin{
+            font-size: 1.75vw;
+        }
+        .ulSpecs{
+            
+            li{
+                font-size: 1.5vw;
+                line-height: 2.5vw;
+            }
+        }
+    }
+}
+.transmis{
+    &__explore{
+        font-size: 2vw;
+    }
+    &__droneDis{
+        margin: 3vw 4vw 2vw 4vw;
+    }
+}
+.features{
+   
+    &__megapix{
+        .blue{
+            font-size: 1.5vw;
+        }
+        .blue2{
+            font-size: 1.25vw;
+        }
+        .camDescription{
+            line-height: 2vw;
+            font-size: 1.25vw;
+        }
+        .icon{
+            font-size: 1.25vw;
+            white-space: nowrap;
+            .iconImg{
+                width: 5vw;
+            }
+        }
+    
+    }
+}
+.footer{
+    height: auto;
+    &__left{
+        .blueThin{
+            font-size: 3vw;
+        }
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+    }
+    &__questions{
+        font-size: 1.35vw;
+    }
+    &__lowerLeft{
+        gap: 8vw;
+        width: 80%;
+        a{
+            font-size: 1.35vw;
+        }
+    }
+    &__right{
+        grid-template-columns:repeat(2,2fr); 
+        grid-gap: 3vw;
+        height: 100%;
+        padding-bottom: 3vw;
+        padding-left: 3vw;
+    }
+    &__info{
+        font-size: 1.25vw;
+        line-height: 4vw;
+    }
+    &__feedback{
+        gap: 1vw;
+    }
+}
+}
+@media (max-width:480px) {
+    
+    .mobileDis{
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+    .blueThin{
+        font-size: 5vw;
+        white-space: nowrap;
+    }
+    .upper{
+        position: relative;
+        width: 100%;
+        .burger{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: fixed;
+            width: 10vw;
+            right: 2vw;
+            &:hover{
+                cursor: pointer;
+            }
+            .burgerInner{
+                width: 60%;
+                height: 1px;
+                background-color: white;
+                align-self: flex-end;
+            }
+            &::before{
+                content: ' ';
+                width: 100%;
+                position: relative;
+                bottom: 1.5vw;
+                background-color: white;
+                height: 1px;
+            }
+            &::after{
+                content: ' ';
+                width: 30%;
+                align-self: flex-end;
+                height: 1px;
+                position: relative;
+                top: 1.5vw;
+                background-color: white;
+            }
+        }
+        .menu{
+            position: fixed;
+            background-color: #1f1c1c;
+            z-index: 2;
+            top:0;
+            display: flex;
+            height: 100%;
+            width: 100vw;
+            flex-direction: column;
+            justify-content: flex-start;
+            .navigation{
+                padding: 0 5vw;
+                flex-direction: column;
+                position: relative;
+                top: 10vw;
+                width: 100%;
+                height: 93%;
+                .user{
+                    height: 20vw;
+                    padding:3vw 0;
+                    width: 100%;
+                    justify-content: space-around;
+                    img{
+                        width: 8vw;
+                        height: 8vw;
+                    }
+                    #storeBtn{
+                        width: 9.5vw;
+                        height: 9.5vw;
+                    }
+                    #searchBtn{
+                        position: relative;
+                        z-index: 5;
+                    }
+                    #searchTextBox{
+                        font-size: 5vw;
+                        width: 900%;
+                        height: 150%;
+                        position: absolute;
+                        padding: 0 10vw;
+                        right: 0;
+                        color: rgb(43, 43, 43);
+                        background: rgb(255, 254, 254);
+                        border: none;
+                        border-radius: 1vw;
+                        align-self: center;
+                        z-index: 4;
+                    }:focus-within{
+                        border: solid lightblue;
+                    }
+                }
+                #list{
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    gap: 0;
+                    
+                    min-width: 100%;
+                    li{
+                        height: 20vw;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        a{
+                        font-size: 5vw;
+                        width: 100%;
+                        height: 100%;
+                        align-items: center;
+                        padding-left: 2vw;
+                    } 
+                    &:hover{
+                        transform: scale(1);
+                        padding: 0;
+                        background-color: #2b2b2b;
+                    }    
+                        
+                    }::after{
+                        content: ' ';
+                        position: relative;
+                        height: 1px;
+                        background-color:rgb(69, 67, 67);
+                    }  
+                }
+                .navList{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                }
+            }
+        }
+    }
+    .inner{
+        overflow: hidden;
+        .mobileDis{
+            height: 10vw;
+            display: flex;
+            justify-content: space-around;
+            background-color: $colorSection;
+            padding: 0 0 0 2vw;
+            .upper{
+                justify-content: flex-end;
+            }
+            .logo{
+                width: 30vw;
+            }
+        }
+    }
+    .main{
+        padding: 20vw 3vw 3vw 3vw;
+        height: auto;
+        .farLeft{
+            display: none;
+        }
+        .mainRightDis{
+            flex-direction: column;
+            .left{
+                display: flex;
+                flex-direction: column;
+                gap: 10vw;
+                p{
+                    font-size: 4.5vw;
+                }
+                .blueThin{
+                    font-size: 10vw;
+                    line-height: 20vw;
+                }
+                .price{
+                    gap: 2vw;
+                    padding: 0 3vw 10vw 3vw;
+                    .priceCl{
+                        h2{
+                            display: none;
+                        }
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1vw;
+                    }
+                    width: 100%;
+                    h2{
+                        font-size: 10vw;
+                    }
+                    h1{
+                        font-size: 8vw;
+                    }
+                    .buttons{
+                        flex-direction: column-reverse;
+                        height: 35vw;
+
+                        .shop{
+                            width: 40vw;
+                            font-size: 5vw;
+                            height: 20vw;
+                        }
+                        .plusMinus{
+                            width: 40vw;
+                            height: 20vw;
+                            justify-content: center;
+                            gap: 5vw;
+                            #quantity{
+                                font-size: 5vw;
+                            }
+                            .plusBtn{
+                               font-size: 10vw;
+                               height: 15vw;
+                               width: 15vw;
+                            }
+                        }
+                    }
+                }
+                .presenting{
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    width: 100%;
+                    height: 100%;;
+                    grid-gap: 2vw;
+                    .pres{
+                        height: 20%;
+                        background-color: #2b2b2b;
+                        width: 100%;
+
+                        display: flex;
+                        padding: 2vw;
+                        border-radius: 8px;
+                        height: 100%;;
+                        .presText{
+                            font-size: 2.5vw;
+                            width: 100%;
+                        }
+                        img{
+                            width: 15vw;
+                        }
+                        &:hover{
+                            background-color:$colorTandI;
+                            cursor: pointer;
+                        }
+                    }
+                    
+                }
+            }
+            .right{
+                align-self: center;
+                width: 100%;
+                height: 100%;
+                #images{
+                    height: 10vw;
+                }
+                .disImages{
+                    .disImage{
+                        width:14vw;
+                        img{
+                            width: 14vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .desTabs{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        height: auto;
+        .part{
+            width: 100%;
+            height: 30vw;
+            img{
+                width: 20vw;
+                height: 10vw;
+            }
+        }
+    }
+    .info1{
+        .farLeft{
+            font-size: 3vw;
+            width: 90%;
+            padding-top: 0;
+            a{
+               padding: 2.5vw;
+               border-radius: 10vw;
+            }
+        }
+        .camera{
+            flex-direction: column;
+            gap: 10vw;
+            
+            &__Left{
+                width: 100%;
+            }
+            &__line{
+                .blueThin{
+                    font-size: 8vw;
+                    line-height: unset;
+                }
+                .whiteThin{
+                    font-size: 4.5vw;
+                }
+            }
+            .specs{
+                gap: 0;
+                justify-content: space-between;
+                .ulSpecs{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 2vw;
+                    li{
+                    font-size: 2.5vw;
+                    }
+                }
+            }
+            .displayImg{
+                width: 80vw;
+            }
+        }
+    }
+    .transmis{
+        &__explore{
+            font-size: 3vw;
+            font-weight: 400;
+        }
+        &__droneDis{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 4vw;
+            padding-top: 8vw;
+        }
+        .farLeft{
+            display: none;
+        }
+        &__droneTxt{
+            font-size: 3vw;
+            line-height: 10vw;
+            font-weight: 400;
+        }
+    }
+    .features{
+        .farLeft{
+            display: none;
+        }
+        &__inner{
+            .wrapRow{
+                flex-direction: column;
+            }
+            .flightImg{
+                display: none;
+            }
+        }
+        &__megapix{
+            width: 100%;
+            gap: 4vw;
+            padding-top: 5vw;
+            .blue{
+                font-size: 8vw;
+            }
+            .blue2{
+                font-size: 5vw;
+            }
+            .camDescription{
+                width: 100%;
+                font-size: 4vw;
+                line-height: 7vw;
+                text-align: justify;
+                
+            }
+        }
+        &__icons{
+            width: 100%;
+            gap: 5vw;
+            .icon{
+                width: 100%;
+                justify-content: flex-start;
+                height: 100%;
+                font-size: 4vw;
+                .iconImg{
+                    width: 20vw;
+                }
+            }
+        }
+    }
+    .footer{
+        &__left{
+            width: 50%;
+            height: 100%;
+            gap: 4vw;
+            padding: 4vw;
+            .blueThin{
+                font-size: 5vw;
+                line-height: unset;
+            }
+            .farLeft{
+                width: 100%;
+                font-size: 2.25vw;
+                a{
+                    padding: 2vw;
+                    border-radius: 4vw;
+                }
+            }
+        }
+        &__questions{
+            font-size: 3vw;
+            line-height: 5vw;
+        }
+        &__feedback{
+            a{
+            font-size: 3vw;
+            }
+        }
+        &__right{
+            width: 50%;
+            grid-template-columns: repeat(1,1fr);
+        }
+        &__info{
+            font-size: 3vw;
+            line-height: 10vw;
+        }
+        &__list{
+            line-height: 7vw;
+        }
+    }
+    
+    .disNone{
+    display: none!important;
+    }
+    .posLeft{
+        position: relative;
+        left: 2vw;
+    }
+    .widen{
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        opacity: .8;
+        border-radius: 10vw;
+
+    }
+    
 }

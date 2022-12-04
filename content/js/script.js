@@ -1,6 +1,12 @@
 
 var ang = angular.module("angMod",[])
 
+const searchBar = document.getElementById("searchTextBox");
+const burgerMenu = document.getElementById("burgerMenu");
+const navMenu = document.getElementById("navMenu");
+const navTab = document.getElementById("navigationTab");
+const bodyId = document.getElementById("bodyId");
+
 
 ang.controller("angCon",function($scope){
     
@@ -37,7 +43,7 @@ ang.controller("angCon",function($scope){
                 "31 min flight time",
                 "Hyperlapse"
             ],
-            image:"pngfind.com-drone-png-1013108.png",
+            image:"Photo-5.webp",
             side:1,
         }
     ]
@@ -133,7 +139,14 @@ ang.controller("angCon",function($scope){
             }  
         }
     }
-    
+    $scope.toggleFun = () =>{
+        searchBar.classList.toggle("hidden");
+    }
+    $scope.toggleMenu = () => {
+        navMenu.classList.toggle("disNone");
+        navTab.classList.toggle("disNone");
+        bodyId.classList.toggle("hiddenFlow");
+    }
 })
 
 
